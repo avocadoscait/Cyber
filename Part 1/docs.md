@@ -8,12 +8,24 @@
     Authentication:
         - To use the wifi on campus, a password and username individualised for each student is required
 
+    Authorisation:
+        - Different users have different access levels (e.g staff and students)
+
 
 **A2. Discover security concepts used in public space.**
     Public Space: Garden City Shopping Centre
 
     CCTV Surveillance:
         - The shopping centre uses cameras
+
+    Physical Security Presence:
+        - Security guards police the inside of the shopping centre
+
+    Alarms:
+        - The shops use alarms alert if someone is stealing
+    
+    Access Control:
+        - There is a key card scanner (RDIF), so when the centre is not open to the public only authorised personel can access the centre
 
 
 
@@ -25,14 +37,20 @@
         - To enter house a password for a PIN keypad is required or a biometric scan of certain fingerprints
         - Without a password or the correct fingerprint my house cannot be entered
 
+    Authentication:
+        - Biometric fingerprint verifies identity
+
 
 
 A4. Discover a vulnerable website.
+    I identified a website (http://www.china.com.cn/) that has been reported online as having potential security weaknesses. I did not attempt to exploit the site. Instead, I researched publicly available information about vulnerabilities. This demonstrates awareness of how some websites may lack proper security configurations, such as outdated software or weak protections.
+
+    http://www.china.com.cn/
 
 
 
 **A5. Discover cryptographic implementation used online.**
-    1HTTPS (TLS Encryption)
+    HTTPS (TLS Encryption)
         - On websites when you see “https://” in a browser
         - Uses TLS (Transport Layer Security)
         - Encrypts data between your browser and the website
@@ -43,7 +61,7 @@ A4. Discover a vulnerable website.
         - So messages are encrypted before being sent
 
 
-    **A6. Discover cryptographic implementation used offline.**
+**A6. Discover cryptographic implementation used offline.**
     Offline Passwords - Hash Functions
         - An example of offline cryptographic implementation is password hashing on a local machine
         - Hash functions such as SHA-256 or bcrypt are used to store passwords securely
@@ -51,7 +69,7 @@ A4. Discover a vulnerable website.
         - This ensures that even if an attacker gains access to the password database, the original passwords cannot be easily recovered. 
         - Salts and slow hashing functions can further protect against dictionary and pre-computation attacks.
 
-    https://www.sciencedirect.com/topics/computer-science/offline-password
+    https://www.sciencedirect.com/topics/compute-science/offline-password
 
 
 **A7. Discover cryptography used in modern networks.**
@@ -82,6 +100,13 @@ A4. Discover a vulnerable website.
 
     https://www.btcmarkets.net/blog/what-is-cryptography
 
+    3. SHA-256 Hashing
+        - The hashing algorithm used in Bitcoin and other cryptocurrencies to secure transactions 
+        - Maintains the integrity of the blockchain
+        - Used in Digital Signatures, Blockchain Technology, SSL/TLS Certificates, Password Hashing
+
+    https://specopssoft.com/blog/sha256-hashing-password-cracking/#:~:text=SHA256%20is%20used%20in%20a,the%20integrity%20of%20the%20blockchain.
+
 **A8. Discover cryptography used in Internet of Things devices.**
 
     Why do we need cryptography in IoT
@@ -98,7 +123,7 @@ A4. Discover a vulnerable website.
 
 
     Advantages:
-        - Integration of data:
+        - Data integration:
         - Security
         - Authentication of the user
 
@@ -112,6 +137,9 @@ VPN
     - ( A Virtual Private Network )
     - Is a service that creates a secure, encrypted tunnel between your device and the internet, hiding your IP address and browsing activity from your Internet Service Provider (ISP) and hackers
     - Protects online privacy on public Wi-Fi and allows users to bypass content restrictions. 
+
+    Limitation:
+    - VPNs do not make users completely anonymous
 
 https://au.cybernews.com/lp/best-vpn-au/?campaignId=23131135324&adgroupId=194399133074&adId=791706778951&targetId=kwd-97567608011&device=c&gunique=Cj0KCQjwve7NBhC-ARIsALZy9HWj66AZ7Oostvi5uW94GIU9JWgzogZYPif4D-pqy5IK8ejh-aV9ML4aAg5rEALw_wcB&gad_source=1&gad_campaignid=23131135324&gbraid=0AAAAACyNk23XLOBfi6rjNjX8n1bRmPFm8&gclid=Cj0KCQjwve7NBhC-ARIsALZy9HWj66AZ7Oostvi5uW94GIU9JWgzogZYPif4D-pqy5IK8ejh-aV9ML4aAg5rEALw_wcB
 
@@ -129,7 +157,7 @@ https://au.cybernews.com/lp/best-vpn-au/?campaignId=23131135324&adgroupId=194399
         - On my laptop, allowing only me to access my devices
     2. Iris/retina scanner
         - A person's iris pattern also persists to be exactly similar throughout his life
-        - Scans are persons irises to gain access to systems
+        - Scans a person's irises to gain access to systems
         - https://www.mantratec.com/IRIS-Scanner
     3. PIN keypad
         - Needs passcode to gain access to system
@@ -156,8 +184,8 @@ https://au.cybernews.com/lp/best-vpn-au/?campaignId=23131135324&adgroupId=194399
     4. Motion Sensor Alarm
         - Detects movement and triggers an alarm, so it alerts unauthorised access
 
-    5. RFID
-        - Prevents unauthorised access
+    5. Security Guards
+        - Having people police certain places to prevent physical theft or vandalism
 
 
 
@@ -226,80 +254,78 @@ https://www.forcepoint.com/blog/insights/ai-security-solutions
 
 5. Kettering Health (Interlock ransomware) healthcare disruption: 
     - In June 2025
-    The ransomware attack disrupted internal systems, phone lines, and EHRs across 14 medical center
+    - The ransomware attack disrupted internal systems, phone lines, and EHRs across 14 medical center
     - Leading to forced procedure cancellations and ambulance diversions. 
     - It’s clear that healthcare remains a high-impact target with direct public-safety consequences.
 
 
-
+These incidents were researched from cybersecurity reports and news source from
 https://www.fortinet.com/resources/cyberglossary/recent-cyber-attacks
 
 
 **A16. Discover 3 local security incidents.**
-1. UWA Security Breach
-    - August 2025
-    - A Cyber attack that exposed thousands of staff and student passwords
-    - UWA locked staff and students out of the system and urged people to change their passwords.
-https://www.abc.net.au/news/2025-08-11/university-of-western-australia-uwa-suffers-major-data-breach/105636074
+    1. UWA Security Breach
+        - August 2025
+        - A Cyber attack that exposed thousands of staff and student passwords
+        - UWA locked staff and students out of the system and urged people to change their passwords.
+    https://www.abc.net.au/news/2025-08-11/university-of-western-australia-uwa-suffers-major-data-breach/105636074
 
-2.  Perth OT firm breached by Akira ransomware
-    - September 2025
-    - The Akira ransomware gang listed Intellect Systems on its dark web leak site earlier this week, claiming to have exfiltrated corporate and personal data
-https://www.cyberdaily.au/security/12662-exclusive-perth-ot-firm-allegedly-breached-by-akira-ransomware
+    2.  Perth OT firm breached by Akira ransomware
+        - September 2025
+        - The Akira ransomware gang listed Intellect Systems on its dark web leak site earlier this week, claiming to have exfiltrated corporate and personal data
+    https://www.cyberdaily.au/security/12662-exclusive-perth-ot-firm-allegedly-breached-by-akira-ransomware
 
-3. iiNet Cyber Breach
-    - August 2025
-    - A cyber incident that exposed the contact details of hundreds of thousands of customers, after an unauthorised third party gained access to its order management system
-https://australiancybersecuritymagazine.com.au/iinet-confirms-cyber-breach-exposing-customer-contact-details/
-
-
-A17. Discover 10 different types of locks in use.
-1. Padlock
-    - Portable lock used on gates, lockers
-    - Opened with a key or combination
-
-2. Deadbolt Lock
-    - Common on house doors
-    - Stronger than standard locks
-
-3. Knob Lock
-    - Built into door handles
-    - Often used indoors
-
-4. Lever Handle Lock
-    - Used in offices and public buildings
-    - Easier to operate than knob locks
-
-5. Smart Lock
-    - Controlled via phone or app
-    - Can use WiFi or Bluetooth
-
-6. Biometric Lock
-    - Uses fingerprint, face or iris recognition
+    3. iiNet Cyber Breach
+        - August 2025
+        - A cyber incident that exposed the contact details of hundreds of thousands of customers, after an unauthorised third party gained access to its order management system
+    https://australiancybersecuritymagazine.com.au/iinet-confirms-cyber-breach-exposing-customer-contact-details/
 
 
-7. Combination Lock
-    - Uses a number code instead of a key
-    - Found on lockers and safes
+**A17. Discover 10 different types of locks in use.**
+    1. Padlock
+        - Portable lock used on gates, lockers
+        - Opened with a key or combination
 
-8. Electronic Keypad Lock
-    - Requires PIN code
-    - Used in offices or apartments
+    2. Deadbolt Lock
+        - Common on house doors
+        - Stronger than standard locks
 
-9. Cam Lock
-    - Used in cabinets, drawers, mailboxes
-    - Small and simple mechanism
+    3. Knob Lock
+        - Built into door handles
+        - Often used indoors
 
-10. Mortise Lock
-    - Installed inside the door
-    - Strong and used in commercial buildings
+    4. Lever Handle Lock
+        - Used in offices and public buildings
+        - Easier to operate than knob locks
+
+    5. Smart Lock
+        - Controlled via phone or app
+        - Can use WiFi or Bluetooth
+
+    6. Biometric Lock
+        - Uses fingerprint, face or iris recognition
+
+    7. Combination Lock
+        - Uses a number code instead of a key
+        - Found on lockers and safes
+
+    8. Electronic Keypad Lock
+        - Requires PIN code
+        - Used in offices or apartments
+
+    9. Cam Lock
+        - Used in cabinets, drawers, mailboxes
+        - Small and simple mechanism
+
+    10. Mortise Lock
+        - Installed inside the door
+        - Strong and used in commercial buildings
 
 
-A18. Discover two hallucination cases when using a generative AI system.
+**A18. Discover two hallucination cases when using a generative AI system.**
 1. Maths
-    - LLMs are generally bad at math
-    - They appear to know operations like multiplication and division, but they don’t actually compute them
-    - Instead, they predict the number that looks most plausible based on their training data
+    - AI models sometimes generate incorrect calculations while appearing confident
+    - This occurs because they predict patterns rather than actually computing results
 
 2. Transcription tool
     - OpenAI’s Whisper speech-to-text model has been found to hallucinate on many occasions. 
@@ -308,28 +334,45 @@ A18. Discover two hallucination cases when using a generative AI system.
 https://www.evidentlyai.com/blog/ai-hallucinations-examples
 
 
-A19. Join a CS/DS/cybersecurity club.
+**A19. Join a CS/DS/cybersecurity club.**
+    I joined CFC ( Coders for Causes )
 DONE
 
 
-A20. Participate in a discussion with your friends about cybersecurity event.
+**A20. Participate in a discussion with your friends about cybersecurity event.**
+    In the screenshot provided, my username is avocados.
 DONE
 
 
-A21. Participate in an online cybersecurity discussion.
+**A21. Participate in an online cybersecurity discussion.**
+    In the screenshot provided, my username is avocados.
 DONE
 
 
 
-A22. Perform a prompt injection attack on a generative AI assistant (controlled test only).
+**A22. Perform a prompt injection attack on a generative AI assistant (controlled test only).**
+I managed to get Deepseek to call me a vulgar term, which breaks safety measures, ethical guidelines, and content filters.
+
+DONE
 
 
 
 A23. Enhance the cybersecurity at your home.
+    To enhance cybersecurity at my home, I ensured that my WiFi network is secured using WPA3 Personal, which is the latest and most secure wireless encryption standard. The network is protected with a strong and unique password to prevent unauthorised access. I have added a screenshot of the type of network my Wifi is but for privacy reasons I will not share my Wifi name.
+
+    I also updated passwords across my own devices and my family’s devices, particularly for sensitive systems such as our home security cameras, to reduce the risk of unauthorised access. In addition, I made sure all devices are regularly updated to the latest software versions and installed antivirus software to protect against malware and other cyber threats. For privacy reasons I will not share my screenshots or photos of my family's devices or the changing of passwords.
+
+    These measures improve overall cybersecurity by strengthening access control, reducing vulnerabilities, and protecting against potential attacks.
+
 
 
 
 A24. Teach your family about cybersecurity topic of your choice.
+    I taught my mum and grandma about phishing attacks and how to recognise suspicious emails. I explained that phishing emails often contain urgent messages, unfamiliar links, or requests for personal information. I advised them not to click on unknown links or provide sensitive information, and to verify the sender before responding. 
+    
+    I also explained that scammers may contact individuals by phone while pretending to be organisations such as banks or insurance companies, and may attempt to collect personal or financial details. I emphasised the importance of not sharing sensitive information unless the caller’s identity can be verified. 
+
+    This helps improve cybersecurity awareness and reduces the risk of scams, particularly for more vulnerable individuals such as elderly people like my grandma.
 
 
 
