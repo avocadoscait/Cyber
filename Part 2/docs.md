@@ -98,7 +98,30 @@ B9. Participate in an industry-related cybersecurity event.
 
 
 B10. Participate in a cybersecurity activity as part of job/internship/volunteering etc. 
+    For this activity I reflected on the cybersecurity practices present in my part-time role working in hospitality at a cafe.
 
+    Workforce Management System — FindMyShift
+    All staff log their hours and find their shifts for the week using FindMyShift, an online workforce management platform. This requires each staff member to have their own login credentials, meaning access to shift records, rosters, and hour tracking is authenticated on a per-user basis. This reflects a basic but important cybersecurity principle called individual accountability, where each user's actions in the system are tied to their own account rather than a shared login.
+    
+    Role-Based Access Control in Practice
+        The cafe's point-of-sale and management systems implement access control based on staff role — a real-world example of Role-Based Access Control (RBAC), which was covered in depth in B17 of this portfolio. 
+        In practice this means:
+
+            - General staff can process sales and basic till functions
+            - Supervisors or senior staff can process refunds — a higher-privilege action
+            - Only the owner has access to payslips and wage information
+
+        This tiered access structure enforces the principle of least privilege, staff only have access to the functions required for their role, reducing the risk of accidental or intentional misuse of sensitive business or financial data.
+
+    Customer Data Handling
+        On rare occasions, customers provide their email address to receive a digital receipt. This constitutes personal data under the Australian Privacy Act 1988. The cafe's handling of this data where they only collect what is necessary and only when the customer initiates it, reflects the principle of data minimisation, which is a core tenet of privacy-conscious data handling.
+
+    Reflection
+        Although the cafe does not have a formal cybersecurity policy or dedicated security training, several cybersecurity principles are applied in practice through the systems and procedures used daily. Observing these real-world implementations, particularly the role-based access control on the POS system reinforces concepts studied in this unit and highlighted how cybersecurity is embedded in everyday business operations, even in small hospitality environments.
+
+    What could be improved:
+        - A formal cybersecurity awareness session for staff would help employees recognise phishing attempts or social engineering targeting the business
+        - A clear policy on password management for FindMyShift and POS systems (e.g. no shared passwords, mandatory password changes) would strengthen access control
 
 B11. Talk to 2 cybersecurity experts from the industry and find out their latest projects. 
 
@@ -158,6 +181,7 @@ B13. Perform a jailbreak attack on a generative AI assistant (controlled test on
 
 
 B14. Teach your friends about cybersecurity topic of you choice. 
+    DONE
 
 B15. Teach an elderly person about cybersecurity topic of your choice. 
 
@@ -338,6 +362,17 @@ B23. Test an intrusion detection system and discuss its effectiveness.
     ANO-003
         High Request Rate
         50+ requests from same IP in analysis window
+    
+    Test Results: 
+        The IDS was run against 28 simulated log entries. 
+        It generated 16 alerts across 7 suspicious IPs — 5 HIGH severity and 11 MEDIUM severity.
+
+
+    Effectiveness: 
+        The signature rules successfully detected all injected attack patterns with no false positives on clean traffic. 
+        The anomaly engine caught the brute force and port scan which leave no individual signature. 
+        Limitations include: 
+            no real-time analysis, static thresholds that miss slow attacks, and no ability to detect novel zero-day attacks.
 
 
 B24. Design and implement access control of your choice. 
@@ -363,17 +398,70 @@ B24. Design and implement access control of your choice.
         •	Business hours
         •	No remote write
         •	Intern restriction
+    
+    Test Results: 
+        16 out of 16 test cases passed. 
+        The same user (Eve, director) was permitted access on a Tuesday morning but denied on Saturday — demonstrating context-aware access control that RBAC alone cannot express.
+
+
+    Why ABAC over RBAC?
+        RBAC assigns static permissions to roles. 
+        ABAC makes dynamic decisions based on context — the same user can be granted or denied access to the same resource depending on time, location, and resource classification.
 
 
 B25. Design and implement a threat intelligence module of your choice. 
     Threat Intelligence
         - the collection, analysis, and application of information about current and potential cyber threats
 
+Intelligence Databases
+	Known malicious IPs
+	Suspicious CIDR ranges
+	Known malicious domains
+	Suspicious TLDs
+	Malicious URL patterns
+
+Implementation:
+    Python creation
+
+Scoring: 
+    Each indicator is scored 0–100 and classified as CLEAN, LOW, MEDIUM, HIGH, or CRITICAL based on exact matches, CIDR range checks, TLD reputation, and URL pattern matching.
+
+
+Sample Results: 
+    194.165.16.11 scored 95/100 (CRITICAL — known C2 server). evil-malware.ru scored 100/100 (CRITICAL — malware C2 + suspicious TLD). google.com scored 0/100 (CLEAN). The module correctly identified all malicious indicators and returned clean results for all legitimate ones.
+
+
+Outcome: 
+    The module forms a complete pipeline with the IDS from B23 — the IDS detects suspicious behaviour, and the threat intelligence module enriches the alert with context about the attacker's known history.
+
+
 B26. Help another student in this unit struggling to understand/learn a cybersecurity concept.
+    DONE
 
 B27. Apply a learned concept in this unit to a real-world application/problem/environment. 
+    After studying credential security as part of this unit, specifically the risks of plaintext password storage (B1), credential stuffing attacks, and the importance of unique passwords per service. I audited my own personal password habits and identified several security weaknesses.
+
+    What I found:
+    I was reusing similar passwords across multiple accounts and relying on passwords I could easily remember, which by definition made them easier to guess. Having studied how credential stuffing works, where attackers take leaked username and password pairs from one breach and automatically test them across hundreds of other services, I recognised this as a direct personal risk. If any single service I used was breached, all my other accounts would be vulnerable.
+
+    What I did:
+    I updated my Google Password Manager to manage all of my personal accounts. This involved:
+
+    Using creating dynamic passwords for each important website, which is having a base password which changes depending on what type of website is being accessed.
+
+    Enabling the Password Checkup feature, which alerts me if any of my saved passwords have appeared in a known data breach
+    Storing passwords in the encrypted vault rather than writing them down or reusing memorable ones.
+
+    How this connects to the unit:
+        This directly applies several concepts studied throughout the unit. The risk of password reuse was covered in B1 under plaintext password storage and credential stuffing where a single breach can cascade across multiple accounts. The concept of using long and unique passwords per service directly counters brute force and credential stuffing attacks. Google Password Manager also integrates with Have I Been Pwned-style breach databases, applying the same threat intelligence principles covered in B25.
+
+        Additionally, studying Argon2 password hashing in B2 gave me a deeper understanding of why password managers store vault data safely, even if Google's servers were breached, the vault contents are encrypted and cannot be read without the master credentials.
+
+    Outcome:
+        All my personal accounts now use unique, randomly generated passwords stored securely in Google Password Manager. I no longer need to remember individual passwords or reuse them across services. This is a direct, measurable improvement to my personal security posture as a result of concepts learned in this unit.
 
 B28. Produce a cyber safety flyer for (choose 1): elders, high school students, CEOs, Uni students. 
+    DONE
 
 B29. Find a CVE in this year and fix it using three different generative AI systems (e.g., ChatGPT, Gemini), comparing the consistency. 
 
